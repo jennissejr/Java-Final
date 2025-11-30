@@ -1,23 +1,27 @@
-abstract class TVEpisode<T> extends Track{
+class TVEpisode<T> extends Track<T> {
 
     private int seasonNumber;
     private int episodeNumber;
 
-    public TVEpisode(String title, String creator, String album, int year, int duration, T rating){
-        super(title, creator, album, year, duration, rating);
-        this.seasonNumber = seasonNumber;
-        this.episodeNumber = episodeNumber;
+    public TVEpisode(String title, String creator, String showTitle,
+                     int year, int duration, T rating) {
+
+        super(title, creator, showTitle, year, duration, rating);
     }
-    public int getSeasonNumber(){
+
+    public void setSeasonNumber(int seasonNumber) {
+        this.seasonNumber = seasonNumber;
+    }
+
+    public int getSeasonNumber() {
         return seasonNumber;
     }
-    public void setSeasonNumber(int seasonNumber){
-        this.seasonNumber = seasonNumber;
-    }
-    public int getEpisodeNumber(){
-        return episodeNumber;
-    }
-    public void setEpisodeNumber(int episodeNumber){
+
+    public void setEpisodeNumber(int episodeNumber) {
         this.episodeNumber = episodeNumber;
+    }
+
+    public int getEpisodeNumber() {
+        return episodeNumber;
     }
 }
